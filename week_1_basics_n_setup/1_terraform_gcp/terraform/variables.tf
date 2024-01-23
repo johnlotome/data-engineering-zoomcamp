@@ -3,22 +3,28 @@ locals {
 }
 
 variable "project" {
-  description = "Your GCP Project ID"
+  description = "Project name"
+  default     = "de-zoomcamp-411820"
 }
 
 variable "region" {
   description = "Region for GCP resources. Choose as per your location: https://cloud.google.com/about/locations"
-  default = "europe-west6"
-  type = string
+  default     = "us-west1"
+  type        = string
+}
+
+variable "credentials" {
+  description = "Service account credentials"
+  default     = "./keys/de-zoomcamp-411820-54d684e928d0.json"
 }
 
 variable "storage_class" {
   description = "Storage class type for your bucket. Check official docs for more info."
-  default = "STANDARD"
+  default     = "STANDARD"
 }
 
 variable "BQ_DATASET" {
   description = "BigQuery Dataset that raw data (from GCS) will be written to"
-  type = string
-  default = "trips_data_all"
+  type        = string
+  default     = "trips_data_all"
 }
